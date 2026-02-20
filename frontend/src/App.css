@@ -1,0 +1,204 @@
+.landingPageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: url(/public/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.landingPageContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+.landingPageContainer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingPageContainer nav h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff9839, #ff7b00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.landingPageContainer nav h2:hover {
+  transform: scale(1.05);
+}
+
+.landingPageContainer nav .navlist {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.landingPageContainer nav .navlist p {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.landingPageContainer nav .navlist p:hover {
+  color: #ff9839;
+  transform: translateY(-2px);
+}
+.landingPageContainer nav .navlist p::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ff9839;
+  transition: 0.3s ease;
+}
+
+.landingPageContainer nav .navlist p:hover::after {
+  width: 100%;
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  min-height: 80vh;
+  align-items: center;
+  gap: 2rem;
+}
+
+.landingMainContainer > div:nth-child(1) h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.landingMainContainer > div:nth-child(1) p {
+  font-size: 1.5rem;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+.landingMainContainer > div:nth-child(1) div[role="button"] {
+  background: linear-gradient(135deg, #ff9839, #ff7b00);
+  width: fit-content;
+  padding: 0.9rem 1.8rem;
+  border-radius: 40px;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 152, 57, 0.4);
+}
+
+.landingMainContainer > div:nth-child(1) div[role="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 152, 57, 0.6);
+}
+
+.landingMainContainer > div:nth-child(1) div[role="button"] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.landingMainContainer > div:nth-child(1) div[role="button"] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+}
+
+.landingMainContainer > div:nth-child(2) img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  transition: transform 0.4s ease;
+}
+.landingMainContainer > div:nth-child(2) img:hover {
+  transform: scale(1.05);
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-align: center;
+}
+.meetContainer {
+  display: flex;
+  padding-inline: 20px;
+  height: 80vh;
+  gap: 10vw;
+  justify-content: center;
+}
+
+.leftPanel {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel > img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .landingMainContainer {
+    flex-direction: column;
+    text-align: center;
+    padding-inline: 1.5rem;
+    justify-content: center;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.6rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role="button"] {
+    margin-inline: auto;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+
+  .landingPageContainer nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .landingPageContainer nav .navlist {
+    flex-direction: column;
+    align-items: center;
+  }
+}
