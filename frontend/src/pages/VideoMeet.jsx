@@ -40,7 +40,7 @@ export default function VideoMeetComponent() {
 
   let [showModal, setModal] = useState(false);
 
-  let [screenAvailable, setScreenAvailable] = useState();
+  // let [screenAvailable, setScreenAvailable] = useState();
 
   let [messages, setMessages] = useState([]);
 
@@ -103,11 +103,11 @@ export default function VideoMeetComponent() {
       setVideoAvailable(true);
       setAudioAvailable(true);
 
-      if (navigator.mediaDevices.getDisplayMedia) {
-        setScreenAvailable(true);
-      } else {
-        setScreenAvailable(false);
-      }
+      // if (navigator.mediaDevices.getDisplayMedia) {
+      //   setScreenAvailable(true);
+      // } else {
+      //   setScreenAvailable(false);
+      // }
 
       //STOP this permission-check stream immediately
       stream.getTracks().forEach((track) => track.stop());
@@ -597,17 +597,13 @@ export default function VideoMeetComponent() {
               {audio === true ? <MicIcon /> : <MicOffIcon />}
             </IconButton>
 
-            {screenAvailable === true ? (
-              <IconButton onClick={handleScreen} style={{ color: "white" }}>
-                {screen === true ? (
-                  <ScreenShareIcon />
-                ) : (
-                  <StopScreenShareIcon />
-                )}
-              </IconButton>
-            ) : (
-              <></>
-            )}
+            <IconButton onClick={handleScreen} style={{ color: "white" }}>
+  {screen === true ? (
+    <StopScreenShareIcon />
+  ) : (
+    <ScreenShareIcon />
+  )}
+</IconButton>
 
             <Badge badgeContent={newMessages} max={999} color="orange">
               <IconButton
